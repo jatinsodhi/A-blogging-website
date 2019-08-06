@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Login or Register </title>
+<link rel="stylesheet" href="style.css">
+<style>
+body{
+   background-image:url('login.png');
+}
+</style>
+</head>
+<body>
+  
+ <div class="login-page"> 
+ <div class="form">
+      <form class="register-form" > 
+   <input type="text" placeholder="Username" required>
+   <input type="password" id="p" placeholder="Password" required>
+   <input type="password" id="confirm_p"placeholder="Confirm password" onblur="confirmPass" required>
+   <script type="text/javascript">
+        function confirmPass(){
+		var pass=document.getElementById("p").value;
+		var Cpass=document.getElementById("confirm_p").value;
+		if(pass!=Cpass)
+		    alert('Wrong confirm password');
+		}
+   </script>
+   <input type="Email" placeholder="Email" required>
+   <input type="number" name="Number" placeholder="phone no" maxlength="10">
+   <button>Create</button><br>
+   <p class= "message">Already Registerd? <a href="#">Login</a> </p>
+   </form>
+    
+ <form class="login-form" action="index.html">
+ <input type="text" placeholder="Username" required>
+ <input type="password" placeholder="password" required>
+ <!--<form action="index.html"> -->
+ <button>login</button>
+ <!-- </form>-->
+ <p class="message">Or <br>Not Registerd? <a href="#">Register</a> </p>
+ </div>
+ </div>
+
+
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js'> </script>
+ 
+ <script>
+ $('.message a').click(function(){
+    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+    });
+ 
+ </script>
+</body>
+</html>
+ 
